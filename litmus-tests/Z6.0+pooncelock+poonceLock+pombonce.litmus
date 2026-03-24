@@ -1,4 +1,4 @@
-C Z6.0+pooncelock+poonceLock+pombonce
+C Z6.0+pooncelock+pooncelock+pombonce
 
 {}
 
@@ -15,7 +15,6 @@ P1(int *y, int *z, spinlock_t *mylock)
 	int r0;
 
 	spin_lock(mylock);
-	smp_mb__after_spinlock();
 	r0 = READ_ONCE(*y);
 	WRITE_ONCE(*z, 1);
 	spin_unlock(mylock);
